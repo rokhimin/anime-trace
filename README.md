@@ -2,7 +2,7 @@
 #ReadMe
 
 #### About
-Trace anime using image / screenshot | Jekyll
+Trace anime using image / screenshot | API trace moe | Jekyll
 
 Live Demo : https://rokhimin.github.io/jekyll-anime-trace
 
