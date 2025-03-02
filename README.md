@@ -4,7 +4,16 @@
 #### About
 Trace anime using image / screenshot | API trace moe | Jekyll
 
-Live Demo : https://rokhimin.github.io/anime-trace
+#### Library
+- engine (jekyll)
+- css (bulma, font-awesome)
+- javascript (jquery)
+- api (trace.moe)
+
+##### Live Demo 
+https://rokhimin.github.io/anime-trace
+
+https://whdzera-anime-trace.vercel.app/
 
 
 ## Contributing
