@@ -2,46 +2,110 @@
 layout: default
 ---
 
-<div class="hero has-background-black-bis is-fullheight">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-one-two">
-                        <div class="field">
-                          <div class="content">
-                                <div class="card has-background-dark has-text-light">
-                                    <div class="card-content"><div class="content">
-  
-                                    <div class="field">
-                                      <h5>Trace Anime using image</h5>
-                                    </div>
-                                    
-                                    <div class="field"> 
-                                        <input class="input" type="file" id="img">
-                                        <button class="button" id="search-btn">Search</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                    </div>
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-2 has-text-centered has-text-light hero-title">Find Your Anime</h1>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          
+          <!-- Upload Section -->
+          <div class="upload-container">
+            <h3 class="title is-4 has-text-light mb-4">Upload Image</h3>
+            
+            <!-- Tabs for upload options -->
+            <div class="tabs-container">
+              <div class="tabs is-boxed">
+                <ul>
+                  <li class="is-active" id="tab-file">
+                    <a>
+                      <span class="icon is-small"><i class="fas fa-file-image"></i></span>
+                      <span>Upload File</span>
+                    </a>
+                  </li>
+                  <li id="tab-url">
+                    <a>
+                      <span class="icon is-small"><i class="fas fa-link"></i></span>
+                      <span>Image URL</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
+            
+            <!-- File Upload Tab Content -->
+            <div id="content-file">
+              <div id="drop-area" class="drop-area">
+                <span class="icon is-large">
+                  <i class="fas fa-cloud-upload-alt fa-2x"></i>
+                </span>
+                <p class="mt-2">Drag & drop your image here</p>
+                <p class="is-size-7 has-text-grey">or</p>
+                <button class="button is-info mt-2" id="browse-btn">Browse Files</button>
+                <input type="file" id="img" accept="image/*" style="display: none;">
+              </div>
+              
+              <div id="file-details" class="is-hidden">
+                <div class="is-flex is-align-items-center">
+                  <span class="icon has-text-info mr-2">
+                    <i class="fas fa-file-image"></i>
+                  </span>
+                  <span id="filename">No file selected</span>
+                  <button class="button is-small is-ghost ml-auto" id="remove-file">
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- URL Tab Content -->
+            <div id="content-url" class="is-hidden">
+              <div class="input-group">
+                <input type="text" class="input" id="image-url" placeholder="Enter image URL">
+                <button class="button is-info" id="fetch-url">Fetch</button>
+              </div>
+            </div>
+            
+            <!-- Preview Section -->
+            <div id="preview-container" class="preview-container has-background-dark-ter is-hidden">
+              <div class="has-text-centered p-4">
+                <h4 class="is-size-5 mb-2">Preview</h4>
+                <div id="preview"></div>
+              </div>
+            </div>
+            
+            <!-- Search Button -->
+            <div class="has-text-centered mt-4">
+              <button class="button is-link is-medium" id="search-btn">
+                <span class="icon">
+                  <i class="fas fa-search"></i>
+                </span>
+                <span>Search for Anime</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Loading indicator -->
+          <div id="loading" class="loading-container is-hidden">
+            <div class="has-text-centered">
+              <p class="has-text-info mb-3">Searching for matching anime...</p>
+              <div class="is-flex justify-content-center">
+                <div class="pulsing-dot"></div>
+                <div class="pulsing-dot"></div>
+                <div class="pulsing-dot"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Results Section -->
+          <div id="results-section" class="is-hidden">
+            <h3 class="title is-4 has-text-light mt-6 mb-4">Results</h3>
+            <div id="result" class="result-container"></div>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-  <article class="message is-dark">
-    <div class="message-header">
-      <p>Preview</p>
-    </div>
-    <div class="message-body">
-  <div id="preview"></div>
-    </div>
-  </article>
-
-
-<div id="result">
-<div class="is-centered" id="loading" style="display: none;">
-    <img src="{{ site.files }}/assets/loading.gif" />
-</div>
-</div>
-
+  </section>
 <script src="{{ site.files }}/assets/trace.js"></script>
