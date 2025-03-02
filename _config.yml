@@ -1,9 +1,9 @@
 title: Trace Anime using Image | whdzera
 email: whdzera@gmail.com
-baseurl: "/jekyll-anime-trace" # the subpath of your site, e.g. /blog
+baseurl: "/anime-trace" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: whdzera
-github_username:  rokhimin/jekyll-anime-trace
+github_username:  rokhimin/anime-trace
 
 permalink: /:title.rb
-files: "/jekyll-anime-trace"
+files: "/anime-trace"
